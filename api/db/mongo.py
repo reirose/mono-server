@@ -34,3 +34,4 @@ class CardsDB(DB):
 
 
 db = DB(settings.mongo_uri)
+db.connect()

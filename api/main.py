@@ -15,7 +15,7 @@ async def lifespan(app_instance: FastAPI):
     yield
 
 
-app = FastAPI()
+app = FastAPI(lifespan=lifespan)
 
 
 if __name__ == '__main__':
