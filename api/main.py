@@ -4,13 +4,14 @@ import uvicorn
 from fastapi import FastAPI
 
 from api.config import settings
-from api.router import cards_router, root_router
+from api.router import cards_router, root_router, users_router
 
 
 @asynccontextmanager
 async def lifespan(app_instance: FastAPI):
     app_instance.include_router(root_router)
     app_instance.include_router(cards_router)
+    app_instance.include_router(users_router)
 
     yield
 
